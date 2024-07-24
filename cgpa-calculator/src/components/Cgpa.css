@@ -1,0 +1,278 @@
+.cgpa_cal {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.cgpa_content {
+  font-size: 1.6em;
+  color: #00134d;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cgpa_deptdrop {
+  margin-right: 25px;
+}
+
+.cgpa_dept_sem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cgpa_dropdowns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.cgpa_form_select {
+  padding: 8px;
+  text-align: center;
+  font-size: 1em;
+  border: 3px solid #00134d;
+  border-radius: 10px;
+  background-color: #d9edff;
+  color: #ff6600;
+  margin-left: 10px;
+  appearance: none;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cgpa_subjects {
+  padding: 50px;
+  margin: 1px 0;
+}
+
+.cgpa_subjects h2 {
+  color: #00134d;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.cgpa_error_msg {
+  font-size: 0.5em;
+}
+
+.cgpa_subject {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.cgpa_subject p {
+  margin-bottom: 0;
+  color: #00134d;
+  font-weight: bold;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.cgpa_grade_drop {
+  margin-right: 35%;
+  margin-left: 10px;
+}
+
+.cgpa_buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.cgpa_button1 {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #00134d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #00134d;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ff6600;
+  color: #00134d;
+}
+
+.cgpa-progress-bar-container {
+  position: absolute;
+  right: 9%;
+  top: 110%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.cgpa_dropdowns {
+  font-size: 20px;
+}
+
+.cgpa_subjects {
+  font-size: 20px;
+}
+
+.cgpa_arrear_form {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  margin-left: -15px;
+}
+
+.cgpa_arrear_form input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.cgpa_arrear_form button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d9edff;
+  color: #00134d;
+  cursor: pointer;
+}
+
+.cgpa_arrear_form button[type="button"] {
+  background-color: rgb(253, 98, 98);
+  color: white;
+}
+
+.cgpa_error_message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .cgpa_content {
+    font-size: 1.5em;
+  }
+
+  .cgpa_dropdowns {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .cgpa_form_select {
+    margin-left: 0;
+  }
+
+  .cgpa_subject {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-left: 10%;
+  }
+
+  .cgpa_grade_drop {
+    padding: 3px 4px;
+  }
+
+  .cgpa_subjects {
+    padding: 20px;
+    margin-left: 20px;
+  }
+
+  .cgpa_deptdrop {
+    margin-bottom: 10px;
+    margin-left: 30px;
+  }
+
+  .cgpa_buttons {
+    margin-top: 30px;
+  }
+
+  .cgpa-progress-bar-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 20px;
+    margin-left: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cgpa_content {
+    font-size: 1.2em;
+  }
+
+  .cgpa_subjects h2 {
+    font-size: 1.5em;
+  }
+
+  .cgpa_dropdowns {
+    flex-direction: column;
+  }
+
+  .cgpa_buttons {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .cgpa_subjects {
+    font-size: 1em;
+  }
+
+  .cgpa_buttons button {
+    width: 50%;
+    margin-left: 20%;
+  }
+
+  .cgpa-progress-bar-container {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cgpa-progress-bar-container {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 320px) {
+  .cgpa-progress-bar-container {
+    margin-left: 0%;
+  }
+
+  .cgpa_arrear_form {
+    width: 110%;
+  }
+}
+
+.front-page {
+  background-image: url('backgroundimg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-right: 20px;
+}
