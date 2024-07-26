@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Cgpa.css';
-import { subjects, semesterSubjects } from './Data.js';
+import { Backtotop, ProgressBar } from '../widgets';
+import { subjects, semesterSubjects } from '../components/Data.js';
 
 const gradeToPoints = {
   'O': 10,
@@ -15,10 +16,10 @@ const gradeToPoints = {
 };
 
 const Dropdown = ({ options, onChange, label, value }) => (
-  <div className="form-group">
+  <div>
     {label && <label>{label}: </label>}
     <select
-      className="form-control cgpa_form_select"
+      className="cgpa_form_select"
       onChange={onChange}
       value={value}
     >
@@ -35,6 +36,7 @@ const Dropdown = ({ options, onChange, label, value }) => (
 );
 
 const Cgpa = () => {
+  const [showMainContent, setShowMainContent] = useState(false);
   const [department, setDepartment] = useState('');
   const [semester, setSemester] = useState('');
   const [selectedGrades, setSelectedGrades] = useState({});
@@ -44,7 +46,6 @@ const Cgpa = () => {
   const [showArrearForm, setShowArrearForm] = useState(false);
   const [arrearSubjectCode, setArrearSubjectCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [page, setPage] = useState('front');
 
   const subject_s = department && semester && semesterSubjects[department] && semesterSubjects[department][semester]
     ? semesterSubjects[department][semester].code.map(code => {
@@ -135,116 +136,101 @@ const Cgpa = () => {
   );
 
   useEffect(() => {
-    document.title = 'SGPA Calculator';
+    document.title = 'ACCET-SGPA Calculator';
   }, []);
 
-  if (page === 'front') {
-    return (
-      <div className="front-page">
-        <h1 className="text-white">Welcome to SGPA Calculator</h1>
-        
-        <button
-          className="btn btn-primary"
-          onClick={() => setPage('content')}
-        >
-          Start
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className="container content-page">
-      <h1 className="text-center">SGPA Calculator</h1>
-
-      <div className="cgpa_dept_sem">
-        <div className="cgpa_content">Select your Department and Semester</div>
-        <div className="cgpa_dropdowns">
-        <div class="dropdown" data-bs-theme="dark">
-          <Dropdown
-            options={['CIVIL', 'MECH', 'EEE', 'ECE', 'CSE']}
-            onChange={handleDeptSelect}
-            label="Department"
-            value={department}
-          />
-          <Dropdown
-            options={[1, 2, 3, 4, 5, 6, 7]}
-            onChange={handleSemesterSelect}
-            label="Semester"
-            value={semester}
-          />
+    <>
+      <Backtotop />
+      {!showMainContent ? (
+        <div className="cgpa_front_page">
+          <h1>Welcome to the SGPA Calculator</h1>
+          <button onClick={() => setShowMainContent(true)}>Start</button>
         </div>
-      </div>
-      </div>
+      ) : (
+        <div className="cgpa_cal">
+          <h1>SGPA Calculator</h1>
 
-      {combinedSubjects.length > 0 && (
-        <div className="cgpa_subjects">
-          <h2 className="text-center">Choose Grades for Each Subject</h2>
-          {combinedSubjects.map((subject, index) => (
-            <div key={index} className="cgpa_subject row">
-              <div className="col-md-6">
-                <p>{subject.name}</p>
-                <small>{subject.code}</small>
-              </div>
-              <div className="col-md-6">
+          <div className="cgpa_deptsem_head">
+            <div className="cgpa_content">Select your Department and Semester</div>
+            <div className="cgpa_deptsem">
+              <div className="cgpa_deptdrop">
                 <Dropdown
-                  options={Object.keys(gradeToPoints)}
-                  onChange={(e) => handleGradeChange(subject.name, e)}
-                  value={selectedGrades[subject.name] || ""}
+                  options={['CIV', 'MEC', 'EEE', 'ECE', 'CSE']}
+                  onChange={handleDeptSelect}
+                  label="Department"
+                  value={department}
                 />
               </div>
+
+              <Dropdown
+                options={[1, 2, 3, 4, 5, 6, 7]}
+                onChange={handleSemesterSelect}
+                label="Semester"
+                value={semester}
+              />
             </div>
-          ))}
-          <div className="text-center">
-            <button
-              className="btn btn-secondary"
-              onClick={handleAddArrearSubject}
-            >
-              Add Arrear Subject
-            </button>
           </div>
-          {showArrearForm && (
-            <div className="cgpa_arrear_form">
-              <form onSubmit={handleArrearFormSubmit} className="form-inline">
-                <input
-                  type="text"
-                  placeholder="Enter Arrear Subject Code"
-                  className="form-control mb-2 mr-sm-2"
-                  value={arrearSubjectCode}
-                  onChange={(e) => {
-                    setArrearSubjectCode(e.target.value);
-                    setErrorMessage('');
-                  }}
-                  required
-                />
-                <button type="submit" className="btn btn-primary mb-2">
-                  Add
+
+          {combinedSubjects.length > 0 && (
+            <div className="cgpa_subjects">
+              <h2>Choose Grades for Each Subject</h2>
+              {combinedSubjects.map((subject, index) => (
+                <div key={index} className="cgpa_subject">
+                  <p>{subject.name} <p2>{subject.code}</p2></p>
+                 
+                  <div className="cgpa_grade_drop">
+                    <Dropdown
+                      options={Object.keys(gradeToPoints)}
+                      onChange={(e) => handleGradeChange(subject.name, e)}
+                      value={selectedGrades[subject.name] || ""}
+                    />
+                  </div>
+                </div>
+              ))}
+              <div className="cgpa_button1">
+                <button onClick={handleAddArrearSubject}>
+                  Add Arrear Subject
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-danger mb-2"
-                  onClick={() => setShowArrearForm(false)}
-                >
-                  Cancel
-                </button>
-              </form>
-              {errorMessage && (
-                <div className="cgpa_error_message">{errorMessage}</div>
+              </div>
+              {showArrearForm && (
+                <div className="cgpa_arrear_form">
+                  <form onSubmit={handleArrearFormSubmit}>
+                    <input
+                      type="text"
+                      placeholder="Enter Arrear Subject Code"
+                      value={arrearSubjectCode}
+                      onChange={(e) => {
+                        setArrearSubjectCode(e.target.value);
+                        setErrorMessage('');
+                      }}
+                      required
+                    />
+                    <button type="submit">Add</button>
+                    <button type="button" onClick={() => setShowArrearForm(false)}>Cancel</button>
+                  </form>
+                  {errorMessage && <div className="cgpa_error_message">{errorMessage}</div>}
+                </div>
               )}
+
+              <div className="cgpa_buttons">
+                <button onClick={handleCalculateCgpa} disabled={!allGradesSelected}>
+                  Calculate GPA
+                </button>
+              </div>
+              <div className="cgpa-progress-bar-container">
+                <ProgressBar 
+                  percent1={progress} 
+                  heading="GPA" 
+                  symbol="" 
+                  display1={overallCgpa} 
+                />
+              </div>
             </div>
           )}
-          <div className="text-center">
-            <button
-              className="btn btn-success"
-              onClick={handleCalculateCgpa}
-              disabled={!allGradesSelected}
-            >
-              Calculate GPA
-            </button>
-          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

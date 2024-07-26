@@ -1,55 +1,103 @@
+/* Cgpa.css */
+
+.cgpa_front_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('backgroundimg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white; /* Optional: Adjust text color for readability */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cgpa_front_page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cgpa_front_page button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #ff6600; /* Optional: Add a semi-transparent background to the button */
+  color: white;
+  border-radius: 5px;
+}
+
+.cgpa_front_page button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .cgpa_cal {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f0fbfb;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 .cgpa_content {
   font-size: 1.6em;
   color: #00134d;
   margin-bottom: 10px;
-  font-weight: bold;
+  text-align: center; /* Center align text */
 }
 
 .cgpa_deptdrop {
   margin-right: 25px;
 }
 
-.cgpa_dept_sem {
+.cgpa_deptsem_head {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.cgpa_dropdowns {
+.cgpa_deptsem {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
   margin-bottom: 2px;
+  font-size: 20px;
 }
 
 .cgpa_form_select {
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   font-size: 1em;
-  border: 3px solid #00134d;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 1px solid #00134d;
   border-radius: 10px;
   background-color: #d9edff;
-  color: #ff6600;
+  color: #00134d;
   margin-left: 10px;
   appearance: none;
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure full width within its container */
+  box-sizing: border-box;
+}
+
+.cgpa_form_select option {
+  background-color: #d9edff;
 }
 
 .cgpa_subjects {
   padding: 50px;
-  margin: 1px 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cgpa_subjects h2 {
   color: #00134d;
   margin-bottom: 30px;
-  font-weight: bold;
 }
 
 .cgpa_error_msg {
@@ -63,11 +111,17 @@
   padding: 10px 0;
 }
 
-.cgpa_subject p {
-  margin-bottom: 0;
-  color: #00134d;
-  font-weight: bold;
+.cgpa_subject p1 {
   flex: 1;
+  margin-bottom: 15px;
+  color: #00134d;
+}
+
+.cgpa_subject p2 {
+  color: #24366e;
+}
+
+.cgpa_subject p {
   margin-right: 10px;
 }
 
@@ -79,16 +133,18 @@
 .cgpa_buttons {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  width: 100%;
 }
 
 .cgpa_button1 {
-  margin-top: 10px;
+  width: 60%; /* Adjusted for better alignment */
+  margin: 0 auto; /* Center align */
 }
 
 button {
   padding: 10px 20px;
   font-size: 1em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
   background: #00134d;
   border: none;
@@ -116,41 +172,41 @@ button:hover:not(:disabled) {
   justify-content: center;
   align-items: center;
   width: 200px;
+  
 }
 
-.cgpa_dropdowns {
-  font-size: 20px;
-}
-
-.cgpa_subjects {
-  font-size: 20px;
+.cgpa_progress-bar {
+  width: 80%; /* Adjust width as needed */
+  max-width: 300px; /* Ensure it doesn’t get too large on wider screens */
+  margin: 0 auto;
 }
 
 .cgpa_arrear_form {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
-  width: 300px;
-  margin-left: -15px;
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  margin-top: 20px; /* Space above the container */
+  width: 100%; /* Ensure full width */
+  max-width: 300px; /* Ensure it doesn’t get too large */
+  box-sizing: border-box;
 }
 
 .cgpa_arrear_form input[type="text"] {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  width: 100%; /* Full width input */
+  padding: 5px; /* Padding inside the input */
+  margin-bottom: 10px; /* Space below the input */
+  border: 2px solid #ccc; /* Border color */
+  border-radius: 10px; /* Rounded corners */
 }
 
 .cgpa_arrear_form button {
-  padding: 8px 16px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #d9edff;
-  color: #00134d;
-  cursor: pointer;
+  padding: 8px 16px; /* Padding inside the button */
+  margin-right: 10px; /* Space between buttons */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #d9edff; /* Button background color */
+  color: #00134d; /* Button text color */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .cgpa_arrear_form button[type="button"] {
@@ -159,9 +215,9 @@ button:hover:not(:disabled) {
 }
 
 .cgpa_error_message {
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
+  color: red; /* Red text color for error message */
+  margin-top: 10px; /* Space above the error message */
+  font-size: 14px; /* Font size for error message */
 }
 
 @media (max-width: 768px) {
@@ -177,7 +233,8 @@ button:hover:not(:disabled) {
   }
 
   .cgpa_form_select {
-    margin-left: 0;
+    margin-left: 10px;
+    width: 100%;
   }
 
   .cgpa_subject {
@@ -185,7 +242,6 @@ button:hover:not(:disabled) {
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 10px;
-    margin-left: 10%;
   }
 
   .cgpa_grade_drop {
@@ -194,20 +250,25 @@ button:hover:not(:disabled) {
 
   .cgpa_subjects {
     padding: 20px;
-    margin-left: 20px;
+    margin: 0;
+    padding-left: 10%;
   }
 
   .cgpa_deptdrop {
     margin-bottom: 10px;
-    margin-left: 30px;
   }
 
   .cgpa_buttons {
-    margin-top: 30px;
+    justify-items: center;
+    width: 30%;
+  }
+
+  .cgpa_button1 {
+    width: 60%; /* Adjusted for better alignment */
   }
 
   .cgpa-progress-bar-container {
-    position: relative;
+    position: relative; /* Remove absolute positioning */
     right: auto;
     top: auto;
     transform: none;
@@ -216,13 +277,17 @@ button:hover:not(:disabled) {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .cgpa_content {
     font-size: 1.2em;
   }
 
   .cgpa_subjects h2 {
     font-size: 1.5em;
+  }
+
+  .cgpa_progress-bar-container {
+    margin: 20px auto;
   }
 
   .cgpa_dropdowns {
@@ -236,43 +301,87 @@ button:hover:not(:disabled) {
 
   .cgpa_subjects {
     font-size: 1em;
+    text-align: start;
   }
 
   .cgpa_buttons button {
     width: 50%;
-    margin-left: 20%;
   }
 
-  .cgpa-progress-bar-container {
-    margin-left: 10%;
+  .cgpa_button1 {
+    width: 50%;
   }
 }
 
-@media (max-width: 600px) {
-  .cgpa-progress-bar-container {
-    margin-left: 30%;
+@media (max-width: 480px) {
+  .cgpa_cal {
+    width: 100%; /* Ensure the container fits the screen width */
+  }
+
+  .cgpa_content {
+    font-size: 1em;
+  }
+
+  .cgpa_subjects h2 {
+    font-size: 1.2em;
+  }
+
+  .cgpa_subjects {
+    padding: 10px;
+    margin: 0;
+  }
+
+  .cgpa_progress-bar-container {
+    margin: 10px auto;
+  }
+
+  .cgpa_buttons {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .cgpa_buttons button {
+    width: 70%;
+  }
+
+  .cgpa_button1 {
+    width: 60%;
   }
 }
 
 @media (max-width: 320px) {
-  .cgpa-progress-bar-container {
-    margin-left: 0%;
+  .cgpa_content {
+    font-size: 0.8em;
   }
 
-  .cgpa_arrear_form {
-    width: 110%;
+  .cgpa_subjects h2 {
+    font-size: 1em;
   }
-}
 
-.front-page {
-  background-image: url('backgroundimg.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  margin-right: 20px;
+  .cgpa_subjects {
+    padding: 5px;
+    margin: 0;
+  }
+
+  .cgpa_progress-bar-container {
+    margin: 5px auto;
+  }
+
+  .cgpa_buttons {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .cgpa_buttons button {
+    width: 80%;
+  }
+
+  
+  .cgpa_button1 {
+    width: 90%; /* Even wider button for very small screens */
+  }
+
+  button {
+    width: 100%; /* Full width for all buttons */
+  }
 }

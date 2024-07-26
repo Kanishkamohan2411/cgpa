@@ -1,0 +1,80 @@
+/* ProgressBar.css */
+
+.progressbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.skill {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+    text-align: center;
+}
+
+.number h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #00134d;
+}
+
+.number p {
+    margin: 5px 0 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.circle {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+svg {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+svg .bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 15px;
+}
+
+svg .progress {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 15px;
+    stroke-dasharray: 440;
+    transition: stroke-dashoffset 1s;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
