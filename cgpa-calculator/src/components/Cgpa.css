@@ -341,9 +341,9 @@ button:hover:not(:disabled) {
     margin: 0;
   }
 
-  .cgpa_progress-bar-container {
+  .cgpa-progress-bar-container {
     position: relative; /* Remove absolute positioning */
-    right: 30%; /* Reset right position */
+    right: 0%; /* Reset right position */
     top: auto; /* Reset top position */
     transform: none; /* Remove transform */
     margin: 70px auto 0; /* Center the container and add top margin */
@@ -357,7 +357,7 @@ button:hover:not(:disabled) {
 
   .cgpa_buttons button {
     width: 40%;
-    justify-items: center;
+    justify-content: center;
   }
 
   .cgpa_button1 button{
@@ -379,7 +379,7 @@ button:hover:not(:disabled) {
     margin: 0;
   }
 
-  .cgpa_progress-bar-container {
+  .cgpa-progress-bar-container {
     margin-left: 20px;
     margin-right: 50px;
   }
@@ -387,6 +387,7 @@ button:hover:not(:disabled) {
   
   .cgpa_buttons button {
     width: 40%;
+    justify-content: center;
   }
 
   
