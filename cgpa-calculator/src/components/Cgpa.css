@@ -1,5 +1,10 @@
 /* Cgpa.css */
-
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .cgpa_front_page {
   display: flex;
   flex-direction: column;
@@ -38,7 +43,9 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 20px;
   background-color: #f0fbfb;
-  width: 100%; /* Ensure full width */
+  width: 100%; 
+  
+  min-height: 100vh; /* Ensure full height *//* Ensure full width */
   box-sizing: border-box; /* Include padding in width */
 }
 
@@ -136,9 +143,13 @@
   width: 100%;
 }
 
-.cgpa_button1 {
-  width: 60%; /* Adjusted for better alignment */
-  margin: 0 auto; /* Center align */
+.cgpa_button1 button{
+  width: 20%;
+  margin-right: 80%;
+  margin-left: 0; 
+  margin-bottom: 30px;
+  margin-top: 30px;/* Adjusted for better alignment */
+ 
 }
 
 button {
@@ -258,13 +269,13 @@ button:hover:not(:disabled) {
     margin-bottom: 10px;
   }
 
-  .cgpa_buttons {
+  .cgpa_buttons button {
     justify-items: center;
     width: 30%;
   }
 
-  .cgpa_button1 {
-    width: 60%; /* Adjusted for better alignment */
+  .cgpa_button1 button{
+    width: 40%; /* Adjusted for better alignment */
   }
 
   .cgpa-progress-bar-container {
@@ -286,18 +297,17 @@ button:hover:not(:disabled) {
     font-size: 1.5em;
   }
 
-  .cgpa_progress-bar-container {
-    margin: 20px auto;
+  .cgpa-progress-bar-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .cgpa_dropdowns {
     flex-direction: column;
   }
 
-  .cgpa_buttons {
-    flex-direction: column;
-    margin-top: 20px;
-  }
+  
 
   .cgpa_subjects {
     font-size: 1em;
@@ -305,10 +315,10 @@ button:hover:not(:disabled) {
   }
 
   .cgpa_buttons button {
-    width: 50%;
+    width: 40%;
   }
 
-  .cgpa_button1 {
+  .cgpa_button1 button{
     width: 50%;
   }
 }
@@ -332,7 +342,12 @@ button:hover:not(:disabled) {
   }
 
   .cgpa_progress-bar-container {
-    margin: 10px auto;
+    position: relative; /* Remove absolute positioning */
+    right: 30%; /* Reset right position */
+    top: auto; /* Reset top position */
+    transform: none; /* Remove transform */
+    margin: 70px auto 0; /* Center the container and add top margin */
+    width: 90%; 
   }
 
   .cgpa_buttons {
@@ -341,11 +356,12 @@ button:hover:not(:disabled) {
   }
 
   .cgpa_buttons button {
-    width: 70%;
+    width: 40%;
+    justify-items: center;
   }
 
-  .cgpa_button1 {
-    width: 60%;
+  .cgpa_button1 button{
+    width: 50%;
   }
 }
 
@@ -364,24 +380,19 @@ button:hover:not(:disabled) {
   }
 
   .cgpa_progress-bar-container {
-    margin: 5px auto;
-  }
-
-  .cgpa_buttons {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .cgpa_buttons button {
-    width: 80%;
+    margin-left: 20px;
+    margin-right: 50px;
   }
 
   
-  .cgpa_button1 {
-    width: 90%; /* Even wider button for very small screens */
+  .cgpa_buttons button {
+    width: 40%;
   }
 
-  button {
-    width: 100%; /* Full width for all buttons */
+  
+  .cgpa_button1 button{
+    width: 50%; /* Even wider button for very small screens */
   }
+
+  
 }
